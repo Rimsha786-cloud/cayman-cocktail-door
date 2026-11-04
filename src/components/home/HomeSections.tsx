@@ -249,7 +249,7 @@ const GALLERY: { photo: PhotoKey; className: string }[] = [
   { photo: "dining-room", className: "col-span-2 row-span-2" },
   { photo: "punch-bowl", className: "row-span-2" },
   { photo: "team-toast", className: "col-span-1" },
-  { photo: "tropical-cocktail", className: "row-span-2" },
+  { photo: "tropical-cocktail", className: "col-span-1" },
   { photo: "plated-dish", className: "row-span-1" },
   { photo: "terrace-busy", className: "col-span-2" },
   { photo: "guests-stools", className: "col-span-1" },
@@ -276,7 +276,7 @@ export function GalleryPreview() {
             </Link>
           </Reveal>
         </div>
-        <Reveal className="mt-16 grid auto-rows-[9rem] grid-cols-2 gap-3 sm:auto-rows-[12rem] md:grid-cols-4 lg:auto-rows-[14rem] lg:gap-4">
+        <Reveal className="mt-16 grid grid-flow-dense auto-rows-[9rem] grid-cols-2 gap-3 sm:auto-rows-[12rem] md:grid-cols-4 lg:auto-rows-[14rem] lg:gap-4">
           {GALLERY.map((g, i) => (
             <button
               key={g.photo}
