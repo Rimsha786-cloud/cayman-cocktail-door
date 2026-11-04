@@ -127,7 +127,7 @@ export function EnquiryForm({ kind, tone = "light" }: Props) {
           <h3 className="mt-6 text-3xl font-light">Thank you — we've received your message.</h3>
           <p className={cn("mx-auto mt-4 max-w-md text-sm leading-relaxed", muted)}>
             Our team will be in touch soon. For anything urgent, call us on{" "}
-            <a href={SITE.reservationsPhone.href} className="underline underline-offset-4">
+            <a href={SITE.reservationsPhone.href} className="whitespace-nowrap underline underline-offset-4">
               {SITE.reservationsPhone.display}
             </a>
             .
