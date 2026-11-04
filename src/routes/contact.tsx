@@ -41,7 +41,8 @@ function Contact() {
       />
 
       <section id="reserve" aria-labelledby="reserve-title" className="scroll-mt-20 bg-background py-24 sm:py-32">
-        <div className="container-deco grid gap-px bg-border lg:grid-cols-3">
+        <div className="container-deco">
+        <div className="grid gap-px bg-border lg:grid-cols-3">
           <Reveal className="bg-emerald p-10 text-ivory sm:p-14 lg:col-span-2 tone-dark">
             <p className="eyebrow text-gold">Reserve a table</p>
             <h2 id="reserve-title" className="mt-6 text-5xl font-light sm:text-6xl">
@@ -64,6 +65,7 @@ function Contact() {
             <HoursList className="mt-6" />
             <p className="mt-6 text-sm text-muted-foreground">Kitchen closes at 11pm.</p>
           </Reveal>
+        </div>
         </div>
       </section>
 

@@ -85,12 +85,19 @@
   --ring: var(--gold-ink);
 
   --shadow-deco: 0 30px 60px -30px color-mix(in oklab, var(--charcoal) 45%, transparent);
-  --overlay-hero: linear-gradient(
-    180deg,
-    color-mix(in oklab, var(--charcoal) 55%, transparent) 0%,
-    color-mix(in oklab, var(--charcoal) 20%, transparent) 40%,
-    color-mix(in oklab, var(--emerald-deep) 85%, transparent) 100%
-  );
+  --overlay-hero:
+    linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--charcoal) 62%, transparent) 0%,
+      color-mix(in oklab, var(--charcoal) 25%, transparent) 55%,
+      transparent 80%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--charcoal) 55%, transparent) 0%,
+      color-mix(in oklab, var(--charcoal) 15%, transparent) 40%,
+      color-mix(in oklab, var(--emerald-deep) 88%, transparent) 100%
+    );
   --overlay-card: linear-gradient(
     180deg,
     transparent 35%,
