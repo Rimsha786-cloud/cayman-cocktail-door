@@ -16,9 +16,10 @@ const DESCRIPTION =
 const IDS = GALLERY_CATEGORIES.map((c) => c.id) as string[];
 
 export const Route = createFileRoute("/gallery")({
-  validateSearch: (search: Record<string, unknown>): { c?: GalleryCategory } => ({
-    c: typeof search.c === "string" && IDS.includes(search.c) ? (search.c as GalleryCategory) : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): { c?: GalleryCategory | undefined } => {
+    const c = search["c"];
+    return { c: typeof c === "string" && IDS.includes(c) ? (c as GalleryCategory) : undefined };
+  },
   head: () => ({
     meta: [
       { title: TITLE },

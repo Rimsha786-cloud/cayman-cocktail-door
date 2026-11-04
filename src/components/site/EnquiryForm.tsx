@@ -26,7 +26,7 @@ function Field({
   tone,
 }: {
   label: string;
-  error?: FieldError;
+  error?: FieldError | undefined;
   registration: UseFormRegisterReturn;
   type?: string;
   required?: boolean;

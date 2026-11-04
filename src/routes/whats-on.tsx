@@ -7,7 +7,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { DecoFan, ReserveBand } from "@/components/site/sections";
 import { SmartImage } from "@/components/site/SmartImage";
-import { SEASONAL, WEEKLY } from "@/lib/events";
+import { SEASONAL, WEEKLY, type EventItem } from "@/lib/events";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/whats-on")({
 });
 
 function WhatsOn() {
-  const [christmas, caymanLoves] = SEASONAL;
+  const [christmas, caymanLoves] = SEASONAL as [EventItem, EventItem];
   return (
     <>
       <PageHero

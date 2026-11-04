@@ -13,9 +13,10 @@ const DESCRIPTION =
   "Browse Door No. 4's cocktail list, kitchen menu, Happy Hour, Sunday Roast, Champagne Saturdays and kids' menu — crafted with local Cayman Islands ingredients.";
 
 export const Route = createFileRoute("/menus")({
-  validateSearch: (search: Record<string, unknown>): { menu?: string } => ({
-    menu: typeof search.menu === "string" ? search.menu : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): { menu?: string | undefined } => {
+    const menu = search["menu"];
+    return { menu: typeof menu === "string" ? menu : undefined };
+  },
   head: () => ({
     meta: [
       { title: TITLE },
@@ -32,7 +33,7 @@ export const Route = createFileRoute("/menus")({
 function MenusPage() {
   const { menu } = Route.useSearch();
   const navigate = useNavigate({ from: "/menus" });
-  const active = MENUS.some((m) => m.id === menu) ? (menu as string) : MENUS[0].id;
+  const active = MENUS.some((m) => m.id === menu) ? (menu as string) : (MENUS[0]?.id ?? "cocktails");
 
   return (
     <>

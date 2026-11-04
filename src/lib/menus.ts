@@ -236,5 +236,5 @@ export const EXTRA_DOWNLOADS = [
 
 /** Signature highlights drawn from the current cocktail list */
 export const SIGNATURES = ["BBQ Peach Old Fashioned", "Sea Breeze No.4", "Bajan Treacle", "Table Martini", "No.75", "Rude Cosmo"]
-  .map((name) => MENUS[0].sections[0].items.find((i) => i.name === name))
+  .map((name) => MENUS[0]?.sections[0]?.items.find((i) => i.name === name))
   .filter((i): i is MenuItem => Boolean(i));
