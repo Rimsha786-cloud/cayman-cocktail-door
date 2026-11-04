@@ -182,7 +182,7 @@ export function ReserveBand() {
               Your table is <em className="text-gold">waiting.</em>
             </>
           }
-          intro={`Call us on ${SITE.reservationsPhone.display} to reserve. Walk-ins are always welcome.`}
+          intro={`Call us on ${SITE.reservationsPhone.display} to reserve. Everyone is welcome at Door No. 4.`}
         />
         <Reveal delay={0.1} className="flex flex-wrap gap-4">
           <a href={SITE.reservationsPhone.href} className={ctaClass("gold")}>
