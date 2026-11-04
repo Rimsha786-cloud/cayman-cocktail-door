@@ -26,16 +26,30 @@ export const SITE = {
   mapsEmbed:
     "https://www.google.com/maps?q=Door+No.+4,+The+Grove,+1358+West+Bay+Road,+Grand+Cayman&output=embed",
   socials: {
-    instagram: { label: "Instagram", handle: "@doorno_4", href: "https://www.instagram.com/doorno_4" },
-    facebook: { label: "Facebook", handle: "doorno4cayman", href: "https://www.facebook.com/doorno4cayman" },
+    instagram: {
+      label: "Instagram",
+      handle: "@doorno_4",
+      href: "https://www.instagram.com/doorno_4",
+    },
+    facebook: {
+      label: "Facebook",
+      handle: "doorno4cayman",
+      href: "https://www.facebook.com/doorno4cayman",
+    },
   },
   founder: "Simon Crompton",
 } as const;
 
 export const HOURS = [
-  { days: "Monday – Friday", short: "Mon – Fri", time: "4pm – 1am", opens: "16:00", closes: "01:00", schema: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"] },
-  { days: "Saturday", short: "Sat", time: "4pm – 12am", opens: "16:00", closes: "00:00", schema: ["Saturday"] },
-  { days: "Sunday", short: "Sun", time: "11am – 12am", opens: "11:00", closes: "00:00", schema: ["Sunday"] },
+  {
+    days: "Monday – Friday",
+    time: "4pm – 1am",
+    opens: "16:00",
+    closes: "01:00",
+    schema: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+  },
+  { days: "Saturday", time: "4pm – 12am", opens: "16:00", closes: "00:00", schema: ["Saturday"] },
+  { days: "Sunday", time: "11am – 12am", opens: "11:00", closes: "00:00", schema: ["Sunday"] },
 ] as const;
 
 export const NAV = [
@@ -48,17 +62,35 @@ export const NAV = [
 ] as const;
 
 export const AWARDS = [
-  { year: "2023", title: "Best New International Cocktail Bar", body: "Honoree", org: "Tales of the Cocktail" },
-  { year: "2023", title: "Best Cocktail Bar", body: "Winner", org: "Best of Cayman" },
-  { year: "2024", title: "Best Cocktail Bar", body: "Winner", org: "Best of Cayman" },
-  { year: "2024", title: "Discovery List", body: "Featured", org: "50 Best" },
-  { year: "Top 10", title: "New Cocktail Bar — Central/South America & Caribbean", body: "Top 10", org: "Spirited Awards" },
-  { year: "#87", title: "Best Bars North America, Canada & the Caribbean", body: "2024", org: "Best Bars" },
-  { year: "#99", title: "Best Bars North America, Canada & the Caribbean", body: "2025", org: "Best Bars" },
+  { mark: "2023", title: "Best New International Cocktail Bar — Honoree", detail: "Tales of the Cocktail" },
+  { mark: "2023", title: "Best Cocktail Bar", detail: "Best of Cayman" },
+  { mark: "2024", title: "Best Cocktail Bar", detail: "Best of Cayman" },
+  { mark: "2024", title: "Discovery List", detail: "50 Best" },
+  { mark: "Top 10", title: "New Cocktail Bar, Central/South America & Caribbean", detail: "Spirited Awards" },
+  { mark: "#87", title: "Best Bars North America, Canada & the Caribbean", detail: "2024" },
+  { mark: "#99", title: "Best Bars North America, Canada & the Caribbean", detail: "2025" },
+] as const;
+
+export const AWARD_LINES = [
+  "Tales of the Cocktail 2023 — Best New International Cocktail Bar Honoree",
+  "Best of Cayman 2023 — Best Cocktail Bar",
+  "Best of Cayman 2024 — Best Cocktail Bar",
+  "50 Best Discovery List 2024",
+  "Spirited Awards Top 10 New Cocktail Bar Central/South America & Caribbean",
+  "#87 Best Bars North America, Canada & the Caribbean 2024",
+  "#99 Best Bars North America, Canada & the Caribbean 2025",
 ] as const;
 
 export const DOCS = documents as Record<
-  "dinner" | "cocktails" | "drinks" | "kids" | "happyHour" | "restaurantMonth" | "champagne" | "sundayRoast" | "brochure",
+  | "dinner"
+  | "cocktails"
+  | "drinks"
+  | "kids"
+  | "happyHour"
+  | "restaurantMonth"
+  | "champagne"
+  | "sundayRoast"
+  | "brochure",
   string
 >;
 
