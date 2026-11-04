@@ -8,7 +8,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { SmartImage } from "@/components/site/SmartImage";
 import { WEEKLY } from "@/lib/events";
 import { SIGNATURES } from "@/lib/menus";
-import type { PhotoKey } from "@/lib/photos";
+import { ALT, type PhotoKey } from "@/lib/photos";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -283,10 +283,11 @@ export function GalleryPreview() {
               type="button"
               onClick={() => setIndex(i)}
               className={cn("group relative overflow-hidden bg-muted", g.className)}
-              aria-label={`Open photo: ${g.photo.replace(/-/g, " ")}`}
+              aria-label={`View larger: ${ALT[g.photo]}`}
             >
               <SmartImage
                 photo={g.photo}
+                decorative
                 sizes="(min-width: 768px) 40vw, 50vw"
                 className="transition-transform duration-[1.6s] ease-deco group-hover:scale-105"
               />
