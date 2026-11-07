@@ -1,15 +1,12 @@
 import * as Tabs from "@radix-ui/react-tabs";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { CtaArrow, ctaClass } from "@/components/site/cta";
 import { PageHero } from "@/components/site/PageHero";
-import { Reveal } from "@/components/site/Reveal";
 import { ReserveBand } from "@/components/site/sections";
-import { SmartImage } from "@/components/site/SmartImage";
 import { MENUS } from "@/lib/menus";
 
 const TITLE = "Menus — Cocktails, Food & Sunday Roast | Door No. 4";
 const DESCRIPTION =
-  "Browse Door No. 4's cocktail list, kitchen menu, Happy Hour, Sunday Roast, Champagne Saturdays and kids' menu — crafted with local Cayman Islands ingredients.";
+  "Browse Door No. 4's cocktail list, kitchen menu, Happy Hour, Sunday Roast, Champagne Saturdays, Restaurant Month, wine & spirits and kids' menu — crafted with local Cayman Islands ingredients.";
 
 export const Route = createFileRoute("/menus")({
   validateSearch: (search: Record<string, unknown>): { menu?: string | undefined } => {
@@ -120,8 +117,8 @@ function MenusPage() {
           ))}
         </Tabs.Root>
 
-        <div className="container-deco mt-24">
-          <p className="mt-6 text-sm text-muted-foreground">
+        <div className="container-deco mt-16">
+          <p className="text-sm text-muted-foreground">
             Menus change with the seasons and the freshest produce on island. Please ask your server about today's selection.
           </p>
         </div>
