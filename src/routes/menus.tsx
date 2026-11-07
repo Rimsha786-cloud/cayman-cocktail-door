@@ -1,16 +1,12 @@
 import * as Tabs from "@radix-ui/react-tabs";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { Download, FileText } from "lucide-react";
-import { CtaArrow, ctaClass } from "@/components/site/cta";
 import { PageHero } from "@/components/site/PageHero";
-import { Reveal } from "@/components/site/Reveal";
 import { ReserveBand } from "@/components/site/sections";
-import { SmartImage } from "@/components/site/SmartImage";
-import { EXTRA_DOWNLOADS, MENUS } from "@/lib/menus";
+import { MENUS } from "@/lib/menus";
 
 const TITLE = "Menus — Cocktails, Food & Sunday Roast | Door No. 4";
 const DESCRIPTION =
-  "Browse Door No. 4's cocktail list, kitchen menu, Happy Hour, Sunday Roast, Champagne Saturdays and kids' menu — crafted with local Cayman Islands ingredients.";
+  "Browse Door No. 4's cocktail list, kitchen menu, Happy Hour, Sunday Roast, Champagne Saturdays, Restaurant Month, wine & spirits and kids' menu — crafted with local Cayman Islands ingredients.";
 
 export const Route = createFileRoute("/menus")({
   validateSearch: (search: Record<string, unknown>): { menu?: string | undefined } => {
@@ -81,11 +77,6 @@ function MenusPage() {
                     <h2 className="text-5xl font-light sm:text-6xl">{m.label}</h2>
                     <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">{m.intro}</p>
                   </div>
-                  <div className="lg:col-span-4 lg:text-right">
-                    <a href={m.pdf} target="_blank" rel="noopener noreferrer" className={ctaClass("dark")}>
-                      <Download className="h-4 w-4" strokeWidth={1.25} /> Download menu
-                    </a>
-                  </div>
                 </div>
 
                 <div className="mt-16 space-y-20">
@@ -126,28 +117,8 @@ function MenusPage() {
           ))}
         </Tabs.Root>
 
-        <div className="container-deco mt-24">
-          <div className="grid gap-px bg-border md:grid-cols-3">
-            <Reveal className="relative min-h-64 overflow-hidden bg-charcoal md:row-span-2">
-              <SmartImage photo="plated-dish" sizes="(min-width: 768px) 33vw, 100vw" className="absolute inset-0" />
-            </Reveal>
-            {EXTRA_DOWNLOADS.map((d) => (
-              <a
-                key={d.label}
-                href={d.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between gap-6 bg-background p-8 transition-colors hover:bg-secondary/60 md:col-span-2"
-              >
-                <span className="flex items-center gap-5">
-                  <FileText className="h-6 w-6 text-gold-ink" strokeWidth={1} />
-                  <span className="font-display text-2xl">{d.label}</span>
-                </span>
-                <CtaArrow />
-              </a>
-            ))}
-          </div>
-          <p className="mt-6 text-sm text-muted-foreground">
+        <div className="container-deco mt-16">
+          <p className="text-sm text-muted-foreground">
             Menus change with the seasons and the freshest produce on island. Please ask your server about today's selection.
           </p>
         </div>
